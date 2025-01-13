@@ -79,20 +79,29 @@ function App(props) {
   return JsxRuntime.jsx("div", {
               children: JsxRuntime.jsxs("div", {
                     children: [
-                      JsxRuntime.jsx(Timer.make, {
-                            time: match$2[0]
+                      JsxRuntime.jsx("h1", {
+                            children: "Rescript stopwatch",
+                            className: "mb-12 flex justify-center text-semibold text-6xl text-white"
                           }),
-                      JsxRuntime.jsx(Controls.make, {
-                            isActive: isActive,
-                            isPaused: isPaused,
-                            onStartClick: handleStart,
-                            onResetClick: handleReset,
-                            onPauseResumeClick: handlePauseResume
+                      JsxRuntime.jsxs("div", {
+                            children: [
+                              JsxRuntime.jsx(Timer.make, {
+                                    time: match$2[0]
+                                  }),
+                              JsxRuntime.jsx(Controls.make, {
+                                    isActive: isActive,
+                                    isPaused: isPaused,
+                                    onStartClick: handleStart,
+                                    onResetClick: handleReset,
+                                    onPauseResumeClick: handlePauseResume
+                                  })
+                            ],
+                            className: "h-80  border border-white rounded-xl text-white shadow-xl flex flex-col justify-between p-8"
                           })
                     ],
-                    className: "h-80 bg-red-500 rounded-xl text-white flex flex-col justify-between p-8"
+                    className: " container mx-auto flex flex-col justify-center items-center "
                   }),
-              className: "mt-32 container mx-auto flex flex-row justify-center"
+              className: "bg-red-500  flex justify-center h-screen"
             });
 }
 
